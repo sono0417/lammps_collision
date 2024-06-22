@@ -10,8 +10,8 @@ class Atom:
 
 
 def add_ball(atoms, xpos, xvel):
-    r = 8
-    s = 1.25
+    r = 10
+    s = 1.55
     h = 0.5 * s
     for ix in range(-r, r+1):
         for iy in range(-r, r+1):
@@ -33,9 +33,9 @@ def save_file(filename, atoms):
         f.write("Position Data\n\n")
         f.write(f"{len(atoms)} atoms\n")
         f.write("1 atom types\n\n")
-        f.write("-40.00 40.00 xlo xhi\n")
-        f.write("-20.00 20.00 ylo yhi\n")
-        f.write("-20.00 20.00 zlo zhi\n")
+        f.write("-60.00 60.00 xlo xhi\n")
+        f.write("-30.00 30.00 ylo yhi\n")
+        f.write("-30.00 30.00 zlo zhi\n")
         f.write("\n")
         f.write("Atoms\n\n")
         for i, a in enumerate(atoms):
@@ -49,7 +49,7 @@ def save_file(filename, atoms):
 
 atoms = []
 
-add_ball(atoms, -20, 5.0)
-add_ball(atoms, 20, -5.0)
+add_ball(atoms, -30, 5.0)
+add_ball(atoms, 30, -5.0)
 
 save_file("collision.atoms", atoms)
